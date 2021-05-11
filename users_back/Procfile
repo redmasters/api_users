@@ -1,1 +1,1 @@
-web: gunicorn users_back.wsgi
+web: gunicorn api:api
