@@ -1,5 +1,5 @@
 import os
-import django_heroku
+import django_on_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!@t6@8mryk4pvp816rx#vh8ugxu%s5vqf$_@--d7j0g!)1g1*j'
+SECRET_KEY = 'CHANGE_ME!!!!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api.apps.ApiConfig',
+    'api',
+    # 'api.apps.ApiConfig',
     'rest_framework',
     'corsheaders',
 ]
@@ -47,7 +48,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'users_back.urls'
 
 CORS_ALLOWED_ORIGINS = [
-    "editlater.com"
+    "https://editlater.com"
 ]
 
 TEMPLATES = [
@@ -116,6 +117,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Default primary key field type
@@ -127,8 +129,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Heroku Settings
 
-cwd = os.getcwd()
-if cwd == '/app' or cwd[:4] == '/tmp':
-    import dj_database_url
+# cwd = os.getcwd()
+# if cwd == '/app' or cwd[:4] == '/tmp':
+#     import dj_database_url
     
-django_heroku.settings(locals())
+django_on_heroku.settings(locals())
