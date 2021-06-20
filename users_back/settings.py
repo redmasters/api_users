@@ -47,9 +47,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'users_back.urls'
 
-CORS_ALLOWED_ORIGINS = [
-    "https://editlater.com"
-]
+CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES' : (
