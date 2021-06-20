@@ -47,7 +47,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'users_back.urls'
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    "https://wonderful-thompson-b553ac.netlify.app/"
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES' : (
